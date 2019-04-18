@@ -34,13 +34,13 @@ public class MusicNightRunner {
         musiciansAddedToBands = new ArrayList<>();
         for (Musician musician :
                 musiciansNotInBand) {
-            Band bandToJoin = randomBand();
+            Band bandToJoin = getRandomBand();
             addMusicianToBand(musician, bandToJoin);
         }
         updateMusiciansNotInBand();
     }
 
-    private Band randomBand() {
+    private Band getRandomBand() {
         Random r = new Random();
         int randomBandIndex = r.nextInt(numberOfBands());
         return bands.get(randomBandIndex);
