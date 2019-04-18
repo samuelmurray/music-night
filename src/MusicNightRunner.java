@@ -57,6 +57,8 @@ public class MusicNightRunner {
             band.addMember(musician);
             musiciansAddedToBands.add(musician);
             logMusicianJoinedBand(musician, band);
+        } else {
+            logMusicianTriedToJoinBand(musician, band);
         }
     }
 
