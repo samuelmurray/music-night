@@ -32,12 +32,16 @@ public class MusicNightRunner {
 
     private void addMusiciansToNewBands() {
         musiciansAddedToBands = new ArrayList<>();
+        addMusiciansNotInBandToRandomBand();
+        updateMusiciansNotInBand();
+    }
+
+    private void addMusiciansNotInBandToRandomBand() {
         for (Musician musician :
                 musiciansNotInBand) {
             Band bandToJoin = getRandomBand();
             addMusicianToBand(musician, bandToJoin);
         }
-        updateMusiciansNotInBand();
     }
 
     private Band getRandomBand() {
