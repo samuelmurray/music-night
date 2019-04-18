@@ -13,4 +13,12 @@ public class Band {
         this.name = name;
         this.musicians = musicians;
     }
+
+    @Override
+    public String toString() {
+        return "Band{" +
+                "name='" + name + '\'' +
+                ", musicians=" + musicians +
+                '}';
+    }
 }
