@@ -6,4 +6,12 @@ public class Musician {
         this.name = name;
         this.instrument = instrument;
     }
+
+    @Override
+    public String toString() {
+        return "Musician{" +
+                "name='" + name + '\'' +
+                ", instrument=" + instrument +
+                '}';
+    }
 }
