@@ -6,6 +6,7 @@ public class MusicNightRunner {
     private final List<Musician> musiciansNotInBand;
     private final List<Band> bands;
     private List<Musician> musiciansAddedToBands;
+    private StringBuilder changeLogBuilder;
 
     public MusicNightRunner() {
         musiciansNotInBand = new ArrayList<>();
@@ -16,6 +17,7 @@ public class MusicNightRunner {
     }
 
     public void playOneNight() {
+        changeLogBuilder = new StringBuilder();
         removeRandomMemberFromBands();
         addMusiciansToNewBands();
     }
@@ -25,6 +27,7 @@ public class MusicNightRunner {
             if (!band.hasNoMembers()) {
                 Musician removedMusician = band.removeAndReturnRandomMember();
                 musiciansNotInBand.add(removedMusician);
+                logMusicianLeftBand(removedMusician, band);
             }
         }
     }
@@ -52,6 +55,7 @@ public class MusicNightRunner {
         if (band.musicianCanBeAdded(musician)) {
             band.addMember(musician);
             musiciansAddedToBands.add(musician);
+            logMusicianJoinedBand(musician, band);
         }
     }
 
@@ -63,6 +67,19 @@ public class MusicNightRunner {
 
     private int numberOfBands() {
         return bands.size();
+    }
+
+    private void logMusicianLeftBand(Musician musician, Band band) {
+        logMusicianBandEvent(musician, band, "left");
+    }
+
+    private void logMusicianJoinedBand(Musician musician, Band band) {
+        logMusicianBandEvent(musician, band, "joined");
+    }
+
+    private void logMusicianBandEvent(Musician musician, Band band, String interaction) {
+        String log = musician + " " + interaction + " " + band + '\n';
+        changeLogBuilder.append(log);
     }
 
     @Override
