@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.NoSuchElementException;
 
 public class Band {
     private final String name;
@@ -29,7 +30,7 @@ public class Band {
 
     public Musician removeAndReturnRandomMember() {
         if (hasNoMembers()) {
-            return;
+            throw new NoSuchElementException("Can't remove member from empty band");
         }
         Random r = new Random();
         int randomMemberIndex = r.nextInt(numberOfMembers());
