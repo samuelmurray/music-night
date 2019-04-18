@@ -16,10 +16,6 @@ public class Instrument {
         this.properties = properties;
     }
 
-    public InstrumentType getType() {
-        return type;
-    }
-
     public boolean hasSameTypeAs(Instrument other) {
         String myTypeName = type.toString();
         String othersTypeName = other.type.toString();
