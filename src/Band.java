@@ -53,4 +53,15 @@ public class Band {
         }
         return instruments;
     }
+
+    public boolean musicianCanBeAdded(Musician musician) {
+        String instrumentType = musician.getInstrumentTypeName();
+        for (String currentInstrument :
+                instrumensInBand()) {
+            if (instrumentType.equals(currentInstrument)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
