@@ -30,14 +30,12 @@ public class MusicNightRunner {
     }
 
     private void addMusiciansNotInBandToRandomBand() {
-        Random r = new Random();
         List<Musician> musiciansAddedToBands = new ArrayList<>();
         for (Musician musician :
                 musiciansNotInBand) {
-            int randomBandIndex = r.nextInt(numberOfBands());
-            Band bandToJoin = bands.get(randomBandIndex);
+            Band bandToJoin = randomBand();
             if (bandToJoin.musicianCanBeAdded(musician)) {
-                bands.get(randomBandIndex).addMember(musician);
+                bandToJoin.addMember(musician);
                 musiciansAddedToBands.add(musician);
             }
         }
@@ -45,6 +43,12 @@ public class MusicNightRunner {
                 musiciansAddedToBands) {
             musiciansNotInBand.remove(musician);
         }
+    }
+
+    private Band randomBand() {
+        Random r = new Random();
+        int randomBandIndex = r.nextInt(numberOfBands());
+        return bands.get(randomBandIndex);
     }
 
     private int numberOfBands() {
