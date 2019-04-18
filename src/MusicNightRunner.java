@@ -5,6 +5,7 @@ import java.util.Random;
 public class MusicNightRunner {
     private final List<Musician> musiciansNotInBand;
     private final List<Band> bands;
+    private List<Musician> musiciansAddedToBands;
 
     public MusicNightRunner() {
         musiciansNotInBand = new ArrayList<>();
@@ -30,14 +31,11 @@ public class MusicNightRunner {
     }
 
     private void addMusiciansNotInBandToRandomBand() {
-        List<Musician> musiciansAddedToBands = new ArrayList<>();
+        musiciansAddedToBands = new ArrayList<>();
         for (Musician musician :
                 musiciansNotInBand) {
             Band bandToJoin = randomBand();
-            if (bandToJoin.musicianCanBeAdded(musician)) {
-                bandToJoin.addMember(musician);
-                musiciansAddedToBands.add(musician);
-            }
+            addMusicianToBand(musician, bandToJoin);
         }
         for (Musician musician :
                 musiciansAddedToBands) {
@@ -49,6 +47,13 @@ public class MusicNightRunner {
         Random r = new Random();
         int randomBandIndex = r.nextInt(numberOfBands());
         return bands.get(randomBandIndex);
+    }
+
+    private void addMusicianToBand(Musician musician, Band band) {
+        if (band.musicianCanBeAdded(musician)) {
+            band.addMember(musician);
+            musiciansAddedToBands.add(musician);
+        }
     }
 
     private int numberOfBands() {
