@@ -16,7 +16,7 @@ public class MusicNightRunner {
 
     public void playOneNight() {
         removeRandomMemberFromBands();
-        addMusciansNotInBandToRandomBand();
+        addMusiciansNotInBandToRandomBand();
     }
 
     private void removeRandomMemberFromBands() {
@@ -29,7 +29,7 @@ public class MusicNightRunner {
         }
     }
 
-    private void addMusciansNotInBandToRandomBand() {
+    private void addMusiciansNotInBandToRandomBand() {
         Random r = new Random();
         List<Musician> musiciansAddedToBands = new ArrayList<>();
         for (Musician musician :
