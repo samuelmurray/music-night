@@ -70,7 +70,11 @@ public class MusicNightRunner {
         StringBuilder builder = new StringBuilder();
         if (!musiciansNotInBand.isEmpty()) {
             builder.append("Musicians not in band: ");
-            builder.append(musiciansNotInBand);
+            for (Musician musician :
+                    musiciansNotInBand) {
+                builder.append("\n\t* ");
+                builder.append(musician);
+            }
             builder.append('\n');
         }
         for (Band band : bands) {
