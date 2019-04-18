@@ -16,6 +16,10 @@ public class MusicalInstrument {
         this.properties = properties;
     }
 
+    public InstrumentType getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -29,9 +33,5 @@ public class MusicalInstrument {
         }
         builder.append(')');
         return builder.toString();
-    }
-
-    public InstrumentType getType() {
-        return type;
     }
 }

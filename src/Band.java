@@ -16,23 +16,6 @@ public class Band {
         this.members = members;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Band ");
-        builder.append(name);
-        if (hasNoMembers()) {
-            builder.append(" with no members");
-        } else {
-            builder.append(" with members:");
-            for (Musician member : members) {
-                builder.append("\n\t* ");
-                builder.append(member);
-            }
-        }
-        return builder.toString();
-    }
-
     public void addMember(Musician member) {
         members.add(member);
     }
@@ -72,5 +55,22 @@ public class Band {
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Band ");
+        builder.append(name);
+        if (hasNoMembers()) {
+            builder.append(" with no members");
+        } else {
+            builder.append(" with members:");
+            for (Musician member : members) {
+                builder.append("\n\t* ");
+                builder.append(member);
+            }
+        }
+        return builder.toString();
     }
 }

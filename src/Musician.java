@@ -7,12 +7,13 @@ public class Musician {
         this.instrument = instrument;
     }
 
+    public String getInstrumentTypeName() {
+        return instrument.getType().toString();
+    }
+
     @Override
     public String toString() {
         return "Musician " + name + " playing " + instrument;
     }
 
-    public String getInstrumentTypeName() {
-        return instrument.getType().toString();
-    }
 }
