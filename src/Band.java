@@ -6,7 +6,7 @@ public class Band {
     private final List<Musician> musicians;
 
     public Band(String name) {
-        this(name, new ArrayList<Musician>());
+        this(name, new ArrayList<>());
     }
 
     public Band(String name, List<Musician> musicians) {
