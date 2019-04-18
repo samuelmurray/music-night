@@ -3,26 +3,26 @@ import java.util.List;
 
 public class Band {
     private final String name;
-    private final List<Musician> musicians;
+    private final List<Musician> members;
 
     public Band(String name) {
         this(name, new ArrayList<>());
     }
 
-    public Band(String name, List<Musician> musicians) {
+    public Band(String name, List<Musician> members) {
         this.name = name;
-        this.musicians = musicians;
+        this.members = members;
     }
 
     @Override
     public String toString() {
         return "Band{" +
                 "name='" + name + '\'' +
-                ", musicians=" + musicians +
+                ", members=" + members +
                 '}';
     }
 
     public void addMember(Musician member) {
-        musicians.add(member);
+        members.add(member);
     }
 }
