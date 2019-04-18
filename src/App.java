@@ -31,7 +31,6 @@ public class App {
         System.out.println("What do you want to do? " +
                 "\n\t 1: List all bands" +
                 "\n\t 2: Play one night" +
-                "\n\t 3: Exit" +
-                "\n");
+                "\n\t 3: Exit");
     }
 }
