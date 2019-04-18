@@ -20,6 +20,12 @@ public class Instrument {
         return type;
     }
 
+    public boolean hasSameTypeAs(Instrument other) {
+        String myTypeName = type.toString();
+        String othersTypeName = other.type.toString();
+        return myTypeName.equals(othersTypeName);
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
