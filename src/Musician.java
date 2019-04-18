@@ -14,4 +14,8 @@ public class Musician {
                 ", instrument=" + instrument +
                 '}';
     }
+
+    public String getInstrumentTypeName() {
+        return instrument.getType().toString();
+    }
 }
