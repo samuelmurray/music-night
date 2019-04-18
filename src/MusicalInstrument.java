@@ -7,7 +7,7 @@ public class MusicalInstrument {
     private final List<InstrumentProperty> properties;
 
     public MusicalInstrument(String type, String manufacturer) {
-        this(type, manufacturer, new ArrayList<InstrumentProperty>());
+        this(type, manufacturer, new ArrayList<>());
     }
 
     public MusicalInstrument(String type, String manufacturer, List<InstrumentProperty> properties) {
