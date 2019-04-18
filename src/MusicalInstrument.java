@@ -18,10 +18,17 @@ public class MusicalInstrument {
 
     @Override
     public String toString() {
-        return type +
-                " (Manufacturer: " + manufacturer + ", " +
-                properties +
-                ')';
+        StringBuilder builder = new StringBuilder();
+        builder.append(type);
+        builder.append(" (Manufacturer: ");
+        builder.append(manufacturer);
+        for (InstrumentProperty property :
+                properties) {
+            builder.append(", ");
+            builder.append(property);
+        }
+        builder.append(')');
+        return builder.toString();
     }
 
     public InstrumentType getType() {

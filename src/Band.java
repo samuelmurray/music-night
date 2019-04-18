@@ -18,8 +18,19 @@ public class Band {
 
     @Override
     public String toString() {
-        return "Band " + name +
-                " with members " + members;
+        StringBuilder builder = new StringBuilder();
+        builder.append("Band ");
+        builder.append(name);
+        if (hasNoMembers()) {
+            builder.append(" with no members");
+        } else {
+            builder.append(" with members:");
+            for (Musician member : members) {
+                builder.append("\n\t* ");
+                builder.append(member);
+            }
+        }
+        return builder.toString();
     }
 
     public void addMember(Musician member) {
@@ -56,7 +67,7 @@ public class Band {
         String instrumentType = musician.getInstrumentTypeName();
         for (String currentInstrument :
                 instrumensInBand()) {
-            if (instrumentType.equals(currentInstrument)){
+            if (instrumentType.equals(currentInstrument)) {
                 return false;
             }
         }
