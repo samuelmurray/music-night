@@ -78,6 +78,10 @@ public class MusicNightRunner {
         logMusicianInteractionBand(musician, "joined", band);
     }
 
+    private void logMusicianTriedToJoinBand(Musician musician, Band band) {
+        logMusicianInteractionBand(musician, "tried to join", band);
+    }
+
     private void logMusicianInteractionBand(Musician musician, String interaction, Band band) {
         String log = musician.getName() + ' ' + interaction + ' ' + band.getName() + '\n';
         changeLogBuilder.append(log);
