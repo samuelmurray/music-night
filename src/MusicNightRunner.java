@@ -37,10 +37,7 @@ public class MusicNightRunner {
             Band bandToJoin = randomBand();
             addMusicianToBand(musician, bandToJoin);
         }
-        for (Musician musician :
-                musiciansAddedToBands) {
-            musiciansNotInBand.remove(musician);
-        }
+        updateMusiciansNotInBand();
     }
 
     private Band randomBand() {
@@ -53,6 +50,13 @@ public class MusicNightRunner {
         if (band.musicianCanBeAdded(musician)) {
             band.addMember(musician);
             musiciansAddedToBands.add(musician);
+        }
+    }
+
+    private void updateMusiciansNotInBand() {
+        for (Musician musician :
+                musiciansAddedToBands) {
+            musiciansNotInBand.remove(musician);
         }
     }
 
