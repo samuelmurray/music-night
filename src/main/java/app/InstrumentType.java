@@ -1,3 +1,5 @@
+package app;
+
 public class InstrumentType {
     private final String type;
 

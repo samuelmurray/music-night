@@ -1,3 +1,5 @@
+package app;
+
 public class InstrumentProperty {
     private final String property;
 

@@ -1,3 +1,5 @@
+package app;
+
 public class Musician {
     private final String name;
     private final Instrument instrument;
