@@ -16,40 +16,15 @@ public class Band {
         this.members = members;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addMember(Musician member) throws IllegalArgumentException {
         if (!musicianCanBeAdded(member)) {
             throw new IllegalArgumentException("Can't add member with existing instrument");
         }
         members.add(member);
-    }
-
-    public Musician removeAndReturnRandomMember() {
-        if (hasNoMembers()) {
-            throw new NoSuchElementException("Can't remove member from empty band");
-        }
-        int randomMemberIndex = getRandomMemberIndex();
-        return members.remove(randomMemberIndex);
-    }
-
-    private int getRandomMemberIndex() {
-        Random r = new Random();
-        return r.nextInt(numberOfMembers());
-    }
-
-    public int numberOfMembers() {
-        return members.size();
-    }
-
-    public boolean hasNoMembers() {
-        return numberOfMembers() == 0;
-    }
-
-    private List<Instrument> instrumentsInBand() {
-        List<Instrument> instruments = new ArrayList<>();
-        for (Musician member : members) {
-            instruments.add(member.getInstrument());
-        }
-        return instruments;
     }
 
     public boolean musicianCanBeAdded(Musician musician) {
@@ -62,8 +37,33 @@ public class Band {
         return true;
     }
 
-    public String getName() {
-        return name;
+    private List<Instrument> instrumentsInBand() {
+        List<Instrument> instruments = new ArrayList<>();
+        for (Musician member : members) {
+            instruments.add(member.getInstrument());
+        }
+        return instruments;
+    }
+
+    public Musician removeAndReturnRandomMember() {
+        if (hasNoMembers()) {
+            throw new NoSuchElementException("Can't remove member from empty band");
+        }
+        int randomMemberIndex = getRandomMemberIndex();
+        return members.remove(randomMemberIndex);
+    }
+
+    public boolean hasNoMembers() {
+        return numberOfMembers() == 0;
+    }
+
+    public int numberOfMembers() {
+        return members.size();
+    }
+
+    private int getRandomMemberIndex() {
+        Random r = new Random();
+        return r.nextInt(numberOfMembers());
     }
 
     @Override

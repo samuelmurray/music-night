@@ -7,17 +7,16 @@ public class Musician {
         this.instrument = instrument;
     }
 
-    public Instrument getInstrument() {
-        return instrument;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public Instrument getInstrument() {
+        return instrument;
     }
 
     @Override
     public String toString() {
         return "Musician " + name + " playing " + instrument;
     }
-
 }

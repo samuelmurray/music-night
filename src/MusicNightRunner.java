@@ -23,16 +23,6 @@ public class MusicNightRunner {
         System.out.println(changeLogBuilder.toString());
     }
 
-    private void removeRandomMemberFromBands() {
-        for (Band band : bands) {
-            if (!band.hasNoMembers()) {
-                Musician removedMusician = band.removeAndReturnRandomMember();
-                musiciansNotInBand.add(removedMusician);
-                logMusicianLeftBand(removedMusician, band);
-            }
-        }
-    }
-
     private void addMusiciansToNewBands() {
         musiciansAddedToBands = new ArrayList<>();
         addMusiciansNotInBandToRandomBand();
@@ -52,6 +42,10 @@ public class MusicNightRunner {
         return bands.get(randomBandIndex);
     }
 
+    private int numberOfBands() {
+        return bands.size();
+    }
+
     private void addMusicianToBand(Musician musician, Band band) {
         if (band.musicianCanBeAdded(musician)) {
             band.addMember(musician);
@@ -68,16 +62,22 @@ public class MusicNightRunner {
         }
     }
 
-    private int numberOfBands() {
-        return bands.size();
-    }
-
-    private void logMusicianLeftBand(Musician musician, Band band) {
-        logMusicianInteractionBand(musician, "left", band);
+    private void removeRandomMemberFromBands() {
+        for (Band band : bands) {
+            if (!band.hasNoMembers()) {
+                Musician removedMusician = band.removeAndReturnRandomMember();
+                musiciansNotInBand.add(removedMusician);
+                logMusicianLeftBand(removedMusician, band);
+            }
+        }
     }
 
     private void logMusicianJoinedBand(Musician musician, Band band) {
         logMusicianInteractionBand(musician, "joined", band);
+    }
+
+    private void logMusicianLeftBand(Musician musician, Band band) {
+        logMusicianInteractionBand(musician, "left", band);
     }
 
     private void logMusicianTriedToJoinBand(Musician musician, Band band) {
