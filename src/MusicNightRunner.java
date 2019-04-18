@@ -35,8 +35,11 @@ public class MusicNightRunner {
         for (Musician musician :
                 musiciansNotInBand) {
             int bandIndex = r.nextInt(numberOfBands());
-            bands.get(bandIndex).addMember(musician);
-            musiciansAddedToBands.add(musician);
+            Band bandMusicianTriesToJoin = bands.get(bandIndex);
+            if (bandMusicianTriesToJoin.musicianCanBeAdded(musician)) {
+                bands.get(bandIndex).addMember(musician);
+                musiciansAddedToBands.add(musician);
+            }
         }
         for (Musician musician :
                 musiciansAddedToBands) {
