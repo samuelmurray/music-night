@@ -15,4 +15,13 @@ public class Instrument {
         this.manufacturer = manufacturer;
         this.properties = properties;
     }
+
+    @Override
+    public String toString() {
+        return "Instrument{" +
+                "type='" + type + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", properties=" + properties +
+                '}';
+    }
 }
