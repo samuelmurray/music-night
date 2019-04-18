@@ -11,10 +11,6 @@ public class Musician {
         return instrument;
     }
 
-    public String getInstrumentTypeName() {
-        return instrument.getType().toString();
-    }
-
     public String getName() {
         return name;
     }
