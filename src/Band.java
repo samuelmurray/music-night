@@ -28,7 +28,7 @@ public class Band {
     }
 
     public void removeRandomMember() {
-        if (numberOfMembers() == 0) {
+        if (hasNoMembers()) {
             return;
         }
         Random r = new Random();
@@ -38,5 +38,9 @@ public class Band {
 
     public int numberOfMembers() {
         return members.size();
+    }
+
+    public boolean hasNoMembers() {
+        return numberOfMembers() == 0;
     }
 }
