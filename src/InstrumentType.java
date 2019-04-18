@@ -29,10 +29,6 @@ public class InstrumentType {
         return new InstrumentType("Ukulele");
     }
 
-    public String getType() {
-        return type;
-    }
-
     @Override
     public String toString() {
         return type;
