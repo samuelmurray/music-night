@@ -20,6 +20,7 @@ public class MusicNightRunner {
         changeLogBuilder = new StringBuilder();
         removeRandomMemberFromBands();
         addMusiciansToNewBands();
+        System.out.println(changeLogBuilder.toString());
     }
 
     private void removeRandomMemberFromBands() {
@@ -78,7 +79,7 @@ public class MusicNightRunner {
     }
 
     private void logMusicianBandEvent(Musician musician, Band band, String interaction) {
-        String log = musician + " " + interaction + " " + band + '\n';
+        String log = musician.getName() + ' ' + interaction + ' ' + band.getName() + '\n';
         changeLogBuilder.append(log);
     }
 
