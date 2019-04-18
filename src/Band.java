@@ -44,4 +44,13 @@ public class Band {
     public boolean hasNoMembers() {
         return numberOfMembers() == 0;
     }
+
+    public List<String> instrumensInBand() {
+        List<String> instruments = new ArrayList<>();
+        for (Musician member :
+                members) {
+            instruments.add(member.getInstrumentTypeName());
+        }
+        return instruments;
+    }
 }
