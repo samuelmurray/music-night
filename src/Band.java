@@ -18,10 +18,8 @@ public class Band {
 
     @Override
     public String toString() {
-        return "Band{" +
-                "name='" + name + '\'' +
-                ", members=" + members +
-                '}';
+        return "Band " + name +
+                " with members " + members;
     }
 
     public void addMember(Musician member) {

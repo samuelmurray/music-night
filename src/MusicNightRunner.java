@@ -67,7 +67,16 @@ public class MusicNightRunner {
 
     @Override
     public String toString() {
-        return "Musicians not in band: " + musiciansNotInBand + '\n' +
-                "Bands: =" + bands;
+        StringBuilder builder = new StringBuilder();
+        if (!musiciansNotInBand.isEmpty()) {
+            builder.append("Musicians not in band: ");
+            builder.append(musiciansNotInBand);
+            builder.append('\n');
+        }
+        for (Band band : bands) {
+            builder.append(band.toString());
+            builder.append('\n');
+        }
+        return builder.toString();
     }
 }

@@ -9,10 +9,7 @@ public class Musician {
 
     @Override
     public String toString() {
-        return "Musician{" +
-                "name='" + name + '\'' +
-                ", instrument=" + instrument +
-                '}';
+        return "Musician " + name + " playing " + instrument;
     }
 
     public String getInstrumentTypeName() {

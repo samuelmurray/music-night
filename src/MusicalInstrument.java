@@ -18,11 +18,10 @@ public class MusicalInstrument {
 
     @Override
     public String toString() {
-        return "MusicalInstrument{" +
-                "type='" + type + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", properties=" + properties +
-                '}';
+        return type +
+                " (Manufacturer: " + manufacturer + ", " +
+                properties +
+                ')';
     }
 
     public InstrumentType getType() {

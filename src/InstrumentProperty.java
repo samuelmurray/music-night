@@ -7,8 +7,6 @@ public class InstrumentProperty {
 
     @Override
     public String toString() {
-        return "InstrumentProperty{" +
-                "property='" + property + '\'' +
-                '}';
+        return property;
     }
 }
