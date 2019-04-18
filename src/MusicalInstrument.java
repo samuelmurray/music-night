@@ -24,4 +24,8 @@ public class MusicalInstrument {
                 ", properties=" + properties +
                 '}';
     }
+
+    public InstrumentType getType() {
+        return type;
+    }
 }
