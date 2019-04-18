@@ -21,4 +21,8 @@ public class Band {
                 ", musicians=" + musicians +
                 '}';
     }
+
+    public void addMember(Musician member) {
+        musicians.add(member);
+    }
 }
