@@ -11,6 +11,10 @@ public class Musician {
         return instrument.getType().toString();
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Musician " + name + " playing " + instrument;
