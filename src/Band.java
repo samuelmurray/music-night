@@ -27,7 +27,7 @@ public class Band {
         members.add(member);
     }
 
-    public Musician removeRandomMember() {
+    public Musician removeAndReturnRandomMember() {
         if (hasNoMembers()) {
             return;
         }
