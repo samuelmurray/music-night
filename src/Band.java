@@ -40,18 +40,18 @@ public class Band {
         return numberOfMembers() == 0;
     }
 
-    private List<String> instrumentsInBand() {
-        List<String> instruments = new ArrayList<>();
+    private List<Instrument> instrumentsInBand() {
+        List<Instrument> instruments = new ArrayList<>();
         for (Musician member : members) {
-            instruments.add(member.getInstrumentTypeName());
+            instruments.add(member.getInstrument());
         }
         return instruments;
     }
 
     public boolean musicianCanBeAdded(Musician musician) {
-        String instrumentType = musician.getInstrumentTypeName();
-        for (String currentInstrument : instrumentsInBand()) {
-            if (instrumentType.equals(currentInstrument)) {
+        Instrument instrument = musician.getInstrument();
+        for (Instrument instrumentInBand : instrumentsInBand()) {
+            if (instrument.hasSameTypeAs(instrumentInBand)) {
                 return false;
             }
         }
