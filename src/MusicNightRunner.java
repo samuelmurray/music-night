@@ -31,10 +31,16 @@ public class MusicNightRunner {
 
     private void addMusciansNotInBandToRandomBand() {
         Random r = new Random();
+        List<Musician> musiciansAddedToBands = new ArrayList<>();
         for (Musician musician :
                 musiciansNotInBand) {
             int bandIndex = r.nextInt(numberOfBands());
             bands.get(bandIndex).addMember(musician);
+            musiciansAddedToBands.add(musician);
+        }
+        for (Musician musician :
+                musiciansAddedToBands) {
+            musiciansNotInBand.remove(musician);
         }
     }
 
