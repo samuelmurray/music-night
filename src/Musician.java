@@ -1,8 +1,8 @@
 public class Musician {
     private final String name;
-    private final Instrument instrument;
+    private final MusicalInstrument instrument;
 
-    public Musician(String name, Instrument instrument) {
+    public Musician(String name, MusicalInstrument instrument) {
         this.name = name;
         this.instrument = instrument;
     }
