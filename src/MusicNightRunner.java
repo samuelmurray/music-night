@@ -18,8 +18,8 @@ public class MusicNightRunner {
 
     public void playOneNight() {
         changeLogBuilder = new StringBuilder();
-        removeRandomMemberFromBands();
         addMusiciansToNewBands();
+        removeRandomMemberFromBands();
         System.out.println(changeLogBuilder.toString());
     }
 
