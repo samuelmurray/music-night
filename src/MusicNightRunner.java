@@ -67,9 +67,7 @@ public class MusicNightRunner {
 
     @Override
     public String toString() {
-        return "MusicNightRunner{" +
-                "musiciansNotInBand=" + musiciansNotInBand +
-                ", bands=" + bands +
-                '}';
+        return "Musicians not in band: " + musiciansNotInBand + '\n' +
+                "Bands: =" + bands;
     }
 }
