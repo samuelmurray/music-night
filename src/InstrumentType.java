@@ -35,8 +35,6 @@ public class InstrumentType {
 
     @Override
     public String toString() {
-        return "InstrumentType{" +
-                "type='" + type + '\'' +
-                '}';
+        return type;
     }
 }
