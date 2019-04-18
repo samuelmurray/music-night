@@ -42,8 +42,7 @@ public class Band {
 
     private List<String> instrumentsInBand() {
         List<String> instruments = new ArrayList<>();
-        for (Musician member :
-                members) {
+        for (Musician member : members) {
             instruments.add(member.getInstrumentTypeName());
         }
         return instruments;
@@ -51,8 +50,7 @@ public class Band {
 
     public boolean musicianCanBeAdded(Musician musician) {
         String instrumentType = musician.getInstrumentTypeName();
-        for (String currentInstrument :
-                instrumentsInBand()) {
+        for (String currentInstrument : instrumentsInBand()) {
             if (instrumentType.equals(currentInstrument)) {
                 return false;
             }

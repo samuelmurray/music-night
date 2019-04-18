@@ -26,8 +26,7 @@ public class MusicalInstrument {
         builder.append(type);
         builder.append(" (Manufacturer: ");
         builder.append(manufacturer);
-        for (InstrumentProperty property :
-                properties) {
+        for (InstrumentProperty property : properties) {
             builder.append(", ");
             builder.append(property);
         }
