@@ -32,4 +32,11 @@ public class InstrumentType {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "InstrumentType{" +
+                "type='" + type + '\'' +
+                '}';
+    }
 }
