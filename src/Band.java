@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Band {
     private final String name;
@@ -24,5 +25,11 @@ public class Band {
 
     public void addMember(Musician member) {
         members.add(member);
+    }
+
+    public void removeRandomMember() {
+        Random r = new Random();
+        int randomMemberIndex = r.nextInt(members.size());
+        members.remove(randomMemberIndex);
     }
 }
