@@ -57,6 +57,10 @@ public class Band {
         return true;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
