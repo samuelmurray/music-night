@@ -27,9 +27,13 @@ public class Band {
         if (hasNoMembers()) {
             throw new NoSuchElementException("Can't remove member from empty band");
         }
-        Random r = new Random();
-        int randomMemberIndex = r.nextInt(numberOfMembers());
+        int randomMemberIndex = getRandomMemberIndex();
         return members.remove(randomMemberIndex);
+    }
+
+    private int getRandomMemberIndex() {
+        Random r = new Random();
+        return r.nextInt(numberOfMembers());
     }
 
     public int numberOfMembers() {
