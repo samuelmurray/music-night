@@ -27,13 +27,13 @@ public class Band {
         members.add(member);
     }
 
-    public void removeRandomMember() {
+    public Musician removeRandomMember() {
         if (hasNoMembers()) {
             return;
         }
         Random r = new Random();
         int randomMemberIndex = r.nextInt(numberOfMembers());
-        members.remove(randomMemberIndex);
+        return members.remove(randomMemberIndex);
     }
 
     public int numberOfMembers() {
