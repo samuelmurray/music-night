@@ -4,43 +4,43 @@ public class MusicianFactory {
 
     public static Musician createRitaLinter() {
         String name = "Rita Linter";
-        MusicalInstrument instrument = InstrumentFactory.createRitaLintersInstrument();
+        Instrument instrument = InstrumentFactory.createRitaLintersInstrument();
         return new Musician(name, instrument);
     }
 
     public static Musician createHazyBaar() {
         String name = "Hazy Baar";
-        MusicalInstrument instrument = InstrumentFactory.createHazyBaarsInstrument();
+        Instrument instrument = InstrumentFactory.createHazyBaarsInstrument();
         return new Musician(name, instrument);
     }
 
     public static Musician createBeatwin() {
         String name = "Beatwin";
-        MusicalInstrument instrument = InstrumentFactory.createBeatwinsInstrument();
+        Instrument instrument = InstrumentFactory.createBeatwinsInstrument();
         return new Musician(name, instrument);
     }
 
     public static Musician createTheVoid() {
         String name = "The Void";
-        MusicalInstrument instrument = InstrumentFactory.createTheVoidsInstrument();
+        Instrument instrument = InstrumentFactory.createTheVoidsInstrument();
         return new Musician(name, instrument);
     }
 
     public static Musician createStringsteen() {
         String name = "Stringsteen";
-        MusicalInstrument instrument = InstrumentFactory.createStringsteensInstrument();
+        Instrument instrument = InstrumentFactory.createStringsteensInstrument();
         return new Musician(name, instrument);
     }
 
     public static Musician createZindea() {
         String name = "Zindea";
-        MusicalInstrument instrument = InstrumentFactory.createZindeasInstrument();
+        Instrument instrument = InstrumentFactory.createZindeasInstrument();
         return new Musician(name, instrument);
     }
 
     public static Musician createCaptor() {
         String name = "Captor";
-        MusicalInstrument instrument = InstrumentFactory.createCaptorsInstrument();
+        Instrument instrument = InstrumentFactory.createCaptorsInstrument();
         return new Musician(name, instrument);
     }
 
