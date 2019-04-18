@@ -16,7 +16,10 @@ public class Band {
         this.members = members;
     }
 
-    public void addMember(Musician member) {
+    public void addMember(Musician member) throws IllegalArgumentException {
+        if (!musicianCanBeAdded(member)) {
+            throw new IllegalArgumentException("Can't add member with existing instrument");
+        }
         members.add(member);
     }
 
