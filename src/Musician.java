@@ -7,6 +7,10 @@ public class Musician {
         this.instrument = instrument;
     }
 
+    public Instrument getInstrument() {
+        return instrument;
+    }
+
     public String getInstrumentTypeName() {
         return instrument.getType().toString();
     }
