@@ -4,4 +4,11 @@ public class InstrumentProperty {
     public InstrumentProperty(String property) {
         this.property = property;
     }
+
+    @Override
+    public String toString() {
+        return "InstrumentProperty{" +
+                "property='" + property + '\'' +
+                '}';
+    }
 }
