@@ -6,25 +6,25 @@ public class InstrumentFactory {
     }
 
     public static MusicalInstrument createRitaLintersInstrument() {
-        String type = "Ukulele";
+        InstrumentType instrumentType = InstrumentType.ukulele();
         String manufacturer = "Brick";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Number of strings: 7"));
         properties.add(new InstrumentProperty("String size: 1.2mm"));
-        return new MusicalInstrument(type, manufacturer, properties);
+        return new MusicalInstrument(instrumentType, manufacturer, properties);
     }
 
     public static MusicalInstrument createHazyBaarsInstrument() {
-        String type = "Guitar";
+        InstrumentType instrumentType = InstrumentType.guitar();
         String manufacturer = "Bender";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Number of strings: 5"));
         properties.add(new InstrumentProperty("String size: 0.4mm"));
-        return new MusicalInstrument(type, manufacturer, properties);
+        return new MusicalInstrument(instrumentType, manufacturer, properties);
     }
 
     public static MusicalInstrument createBeatwinsInstrument() {
-        String instrumentType = "Piano";
+        InstrumentType instrumentType = InstrumentType.piano();
         String manufacturer = "Bender";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Number of keys: 51"));
@@ -33,7 +33,7 @@ public class InstrumentFactory {
     }
 
     public static MusicalInstrument createTheVoidsInstrument() {
-        String instrumentType = "Synthesizer";
+        InstrumentType instrumentType = InstrumentType.synthesizer();
         String manufacturer = "Lorg";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Number of keys: 47"));
@@ -42,7 +42,7 @@ public class InstrumentFactory {
     }
 
     public static MusicalInstrument createStringsteensInstrument() {
-        String instrumentType = "Banjo";
+        InstrumentType instrumentType = InstrumentType.banjo();
         String manufacturer = "Gibson";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Number of strings: 4"));
@@ -51,7 +51,7 @@ public class InstrumentFactory {
     }
 
     public static MusicalInstrument createZindeasInstrument() {
-        String instrumentType = "Drums";
+        InstrumentType instrumentType = InstrumentType.drums();
         String manufacturer = "Toyota";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Has hi-hat"));
@@ -59,7 +59,7 @@ public class InstrumentFactory {
     }
 
     public static MusicalInstrument createCaptorsInstrument() {
-        String instrumentType = "Sythesizer";
+        InstrumentType instrumentType = InstrumentType.synthesizer();
         String manufacturer = "Suzuki";
         List<InstrumentProperty> properties = new ArrayList<>();
         properties.add(new InstrumentProperty("Number of keys: 72"));
