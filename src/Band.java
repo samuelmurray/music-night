@@ -40,7 +40,7 @@ public class Band {
         return numberOfMembers() == 0;
     }
 
-    public List<String> instrumentsInBand() {
+    private List<String> instrumentsInBand() {
         List<String> instruments = new ArrayList<>();
         for (Musician member :
                 members) {
