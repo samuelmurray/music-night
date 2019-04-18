@@ -29,7 +29,11 @@ public class Band {
 
     public void removeRandomMember() {
         Random r = new Random();
-        int randomMemberIndex = r.nextInt(members.size());
+        int randomMemberIndex = r.nextInt(numberOfMembers());
         members.remove(randomMemberIndex);
+    }
+
+    public int numberOfMembers() {
+        return members.size();
     }
 }
