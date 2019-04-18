@@ -71,14 +71,14 @@ public class MusicNightRunner {
     }
 
     private void logMusicianLeftBand(Musician musician, Band band) {
-        logMusicianBandEvent(musician, band, "left");
+        logMusicianBandEvent(musician, "left", band);
     }
 
     private void logMusicianJoinedBand(Musician musician, Band band) {
-        logMusicianBandEvent(musician, band, "joined");
+        logMusicianBandEvent(musician, "joined", band);
     }
 
-    private void logMusicianBandEvent(Musician musician, Band band, String interaction) {
+    private void logMusicianBandEvent(Musician musician, String interaction, Band band) {
         String log = musician.getName() + ' ' + interaction + ' ' + band.getName() + '\n';
         changeLogBuilder.append(log);
     }
