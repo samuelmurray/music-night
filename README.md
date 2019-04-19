@@ -4,15 +4,17 @@ A demo of object oriented programming in Java.
 
 The project simulates bands playing during multiple nights, with members leaving and joining bands each session. Specifically, each night all members currently not in a band tries to join a band, and at the end of the night one random member from each band leaves. This could be the same member that just joined (that person's performance didn't quite hit the mark).
 
+
 ## Implementation
 
-We make extensive use of has-a relations between our classes. Specifically, each Band has a name and a list of members; each member has a name, and an instrument; and each instrument has a type, a manufacturer and a list of properties. A property is virtually a String, but is implemented as a class to enable future additions. The instrument's type is also a class, which can only be instantiated using a factory method. This was to prevent failed comparisons between instrument types due to typos or different spellings. An alternative would have been to use subclasses, which could have the upside of facilitating extension, but was ultimately deemed unnecessary for this small project.
+We make extensive use of has-a relations between our classes. Specifically, each Band has a name and a list of members (Musician); each Musician has a name and an instrument; and each Instrument has a type, a manufacturer and a list of properties. A property (InstrumentProperty) is virtually a String, but is implemented as a class to enable future additions. The instrument's type (InstrumentType) is also a class, which can only be instantiated using a factory method. This was to prevent failed comparisons between instrument types due to typos or different spellings. An alternative would have been to use subclasses, which could have the upside of facilitating extension, but was ultimately deemed unnecessary for this small project.
 
-Bands, musicians and instruments can be instantiated using the constructors, but alternatively, we provide a factory class for each. These create bands etc. specific to this assignment, and are thus not usable for a general case. However, it comes with the benefit that in order to have more bands, one need simply create more band-creating methods.
+Bands, musicians and instruments can be instantiated using the constructors, or alternatively using the provided factory classes. These create bands etc. specific to this assignment, and are thus not usable for a general case. However, it comes with the benefit that in order to have more bands, one need simply add more band-creating methods.
 
-The MusicNightRunner provides the engine for the simulation; it provides public methods for listing all bands (by overriding toString) and simulating one night. The latter works by looping through all musicians not in a band and attempting to add them to a random band. This will fail if the band already has a member with an instrument of the same type. The second step is that each band loses one member at random. The changes are then printed, using a StringBuilder change log.
+The MusicNightRunner acts as the engine for the simulation; it provides public methods for listing all bands, with members and instrument information (by overriding toString) and simulating one night. The latter works by looping through all musicians not in a band and attempting to add them to a random band. This will fail if the band already has a member with an instrument of the same type - the musician would then remain without a band. The second step is that each band loses one member at random. All changes are then printed, using a StringBuilder change log.
 
 Finally, the main function is in the App class, which provides a terminal interface to the user, who can choose to 1. List all bands, 2. Play one night, or 3. Exit.
+
 
 ## Run instructions
 
@@ -23,6 +25,7 @@ $ cd src/main/java
 $ javac app/*.java
 $ java app.App
 ```
+
 
 ## Example run
 
@@ -77,4 +80,3 @@ What do you want to do?
 3
 Exiting
 ```
-
